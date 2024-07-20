@@ -1,0 +1,10 @@
+{
+    "server" : {
+        "port"   : 3000,
+        "host": "localhost",
+        "env": "development",
+        "basicBaseUrl": "/api/v1/basic",
+        "baseUrl": "/api/v1",
+        "secureBaseUrl": "/api/v1/secure"
+    }
+}
