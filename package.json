@@ -2,6 +2,7 @@
   "name": "blog-app",
   "version": "1.0.0",
   "description": "A test app for a blog website",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +12,9 @@
     "url": "Blog---Application"
   },
   "author": "Gopakumar G",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.12",
+    "express": "^4.19.2"
+  }
 }
