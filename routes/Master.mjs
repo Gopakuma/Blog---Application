@@ -1,4 +1,6 @@
-import { getAllFeeds, getOneFeedById } from "./Home/controller.mjs";
+import { getAllFeeds, getOneFeedById, login } from "./Home/controller.mjs";
+import config from "config";
+const serverConfig = config.get("server");
 
 class Master {
   constructor(router, validation, authenticate) {
@@ -9,10 +11,14 @@ class Master {
   }
   init() {
     this.createMasterApis();
+    this.createUserApis();
   }
   createMasterApis() {
-    this.router.get("/", getAllFeeds);
-    this.router.get("/:id", getOneFeedById);
+    this.router.get(`${serverConfig.baseUrl}/feed`, getAllFeeds);
+    this.router.get(`${serverConfig.baseUrl}/:id`, getOneFeedById);
+  }
+  createUserApis() {
+    this.router.post(`${serverConfig.baseUrl}/login`, login);
   }
 }
 

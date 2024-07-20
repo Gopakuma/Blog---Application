@@ -2,14 +2,17 @@ import { Router } from "express";
 const router = new Router();
 import config from "config";
 const serverConfig = config.get("server");
+import { basicAuth } from "../middleware/basicAuth.mjs";
 
 // urls
 const baseUrl = serverConfig.baseUrl;
 const basicBaseUrl = serverConfig.basicBaseUrl;
 const secureBaseUrl = serverConfig.secureBaseUrl;
+
 const authenticate = "";
+
 // basic authenticate
-// router.use(basicBaseUrl, basic_auth);
+router.use(baseUrl, basicAuth);
 
 // authenticate
 // router.use(secureBaseUrl, authenticate);
@@ -24,7 +27,7 @@ const validationObject = {
   validateSession: "validateSession",
 };
 import routers from "./index.mjs";
-routers(router, validationObject, authenticate);
+routers(router, validationObject, basicAuth);
 
 //exports all apis
 export default router;

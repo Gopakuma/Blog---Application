@@ -6,5 +6,10 @@
         "basicBaseUrl": "/api/v1/basic",
         "baseUrl": "/api/v1",
         "secureBaseUrl": "/api/v1/secure"
+    },
+    "credentials": {
+        "email"   : "admin@gmail.com",
+        "password": "123#@pass",
+        "secret"  : "kqujhebfquHEB" 
     }
 }
